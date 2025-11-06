@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dqmptspjmueb1"]
+[gd_scene load_steps=14 format=4 uid="uid://dqmptspjmueb1"]
 
 [ext_resource type="PackedScene" uid="uid://m3ryk0cnyv74" path="res://nodes/main_character.tscn" id="1_xpfdc"]
 [ext_resource type="Texture2D" uid="uid://ca732l280v085" path="res://Art/png/brick.png" id="2_y2wr3"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://fbbc28g1o3q2" path="res://nodes/hud.tscn" id="6_sybi7"]
 [ext_resource type="PackedScene" uid="uid://cw4y54fe4u20g" path="res://nodes/mystery_block.tscn" id="7_6s2ku"]
 [ext_resource type="PackedScene" uid="uid://ct5ixit5wcdq2" path="res://nodes/data_yellow.tscn" id="8_gp064"]
-[ext_resource type="PackedScene" uid="uid://dyfsur47t62hx" path="res://nodes/data_pink.tscn" id="10_rshm7"]
-[ext_resource type="PackedScene" uid="uid://daxnq8ofijc2g" path="res://nodes/goomba.tscn" id="11_7aemw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmn7o"]
 texture = ExtResource("2_y2wr3")
@@ -102,9 +100,3 @@ position = Vector2(4662, 306)
 
 [node name="Mystery Block14" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(3906, 306)
-
-[node name="data_pink" parent="." instance=ExtResource("10_rshm7")]
-position = Vector2(169, 535)
-
-[node name="Goomba" parent="." instance=ExtResource("11_7aemw")]
-position = Vector2(491.00003, 555)
