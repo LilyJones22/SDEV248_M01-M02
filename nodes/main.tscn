@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dqmptspjmueb1"]
+[gd_scene load_steps=20 format=4 uid="uid://dqmptspjmueb1"]
 
 [ext_resource type="PackedScene" uid="uid://m3ryk0cnyv74" path="res://nodes/main_character.tscn" id="1_xpfdc"]
 [ext_resource type="Texture2D" uid="uid://ca732l280v085" path="res://Art/png/brick.png" id="2_y2wr3"]
@@ -7,7 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://cpdd5hxeyp6eo" path="res://Art/png/mystery block.png" id="5_gp064"]
 [ext_resource type="PackedScene" uid="uid://fbbc28g1o3q2" path="res://nodes/hud.tscn" id="6_sybi7"]
 [ext_resource type="PackedScene" uid="uid://cw4y54fe4u20g" path="res://nodes/mystery_block.tscn" id="7_6s2ku"]
+[ext_resource type="PackedScene" uid="uid://dut1d37o542vw" path="res://nodes/coin.tscn" id="8_01b7x"]
 [ext_resource type="PackedScene" uid="uid://ct5ixit5wcdq2" path="res://nodes/data_yellow.tscn" id="8_gp064"]
+[ext_resource type="PackedScene" uid="uid://xlsfswfx1jj1" path="res://nodes/life_up.tscn" id="10_heg84"]
+[ext_resource type="PackedScene" uid="uid://dyfsur47t62hx" path="res://nodes/data_pink.tscn" id="11_c3m70"]
+[ext_resource type="PackedScene" uid="uid://chps5hmijp77j" path="res://nodes/data_blue.tscn" id="12_t4bcl"]
+[ext_resource type="PackedScene" uid="uid://daxnq8ofijc2g" path="res://nodes/goomba.tscn" id="13_ecu0m"]
+[ext_resource type="PackedScene" uid="uid://bvxa1fqukjok8" path="res://nodes/koopa.tscn" id="14_gmty7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmn7o"]
 texture = ExtResource("2_y2wr3")
@@ -59,6 +65,7 @@ tile_set = SubResource("TileSet_h0f1k")
 
 [node name="Mystery Block" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(594, 450)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block2" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(738, 450)
@@ -66,37 +73,102 @@ item_scene = ExtResource("8_gp064")
 
 [node name="Mystery Block3" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(810, 450)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block4" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(774, 306)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block5" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(2286, 414)
+item_scene = ExtResource("10_heg84")
 
 [node name="Mystery Block6" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(2790, 450)
+item_scene = ExtResource("11_c3m70")
 
 [node name="Mystery Block7" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(3366, 306)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block8" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(4014, 450)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block9" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(4626, 306)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block10" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(6102, 450)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block11" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(3798, 450)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block12" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(3906, 450)
+item_scene = ExtResource("12_t4bcl")
 
 [node name="Mystery Block13" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(4662, 306)
+item_scene = ExtResource("8_01b7x")
 
 [node name="Mystery Block14" parent="MysteryBlocks" instance=ExtResource("7_6s2ku")]
 position = Vector2(3906, 306)
+item_scene = ExtResource("8_gp064")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Goomba" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(831, 556)
+
+[node name="Goomba2" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(1534, 556)
+
+[node name="Goomba3" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(1838, 557)
+
+[node name="Goomba4" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(1928, 553)
+
+[node name="Goomba5" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(2903, 268)
+
+[node name="Goomba6" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(2984, 267)
+
+[node name="Goomba7" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(3305, 552)
+
+[node name="Goomba8" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(3357, 550)
+
+[node name="Goomba9" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(4091, 559)
+
+[node name="Goomba10" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(4207, 558)
+
+[node name="Goomba11" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(4563, 553)
+
+[node name="Goomba12" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(4522, 559)
+
+[node name="Goomba13" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(4630, 556)
+
+[node name="Goomba14" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(4697, 554)
+
+[node name="Goomba15" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(6238, 554)
+
+[node name="Goomba16" parent="Enemies" instance=ExtResource("13_ecu0m")]
+position = Vector2(6316.0005, 543)
+
+[node name="Koopa" parent="Enemies" instance=ExtResource("14_gmty7")]
+position = Vector2(3769, 549)
