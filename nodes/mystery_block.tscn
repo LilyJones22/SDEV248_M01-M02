@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw4y54fe4u20g"]
+
+[ext_resource type="Script" uid="uid://carscknefwtbh" path="res://mystery_block.gd" id="1_5x2pw"]
+[ext_resource type="Texture2D" uid="uid://cpdd5hxeyp6eo" path="res://Art/png/mystery block.png" id="2_k4wbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vgg"]
+size = Vector2(36, 36)
+
+[node name="Mystery Block" type="StaticBody2D" groups=["blocks"]]
+collision_layer = 4
+script = ExtResource("1_5x2pw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_75vgg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_k4wbb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_75vgg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://daxnq8ofijc2g"]
+
+[ext_resource type="Script" uid="uid://d15prratipw6" path="res://nodes/goomba.gd" id="1_8smrv"]
+[ext_resource type="Texture2D" uid="uid://22txgrg24xco" path="res://Art/png/enemy_1.png" id="1_hy2i1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8smrv"]
+size = Vector2(18, 15)
+
+[node name="Goomba" type="Area2D" groups=["enemy"]]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_8smrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["enemy"]]
+texture = ExtResource("1_hy2i1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8smrv")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

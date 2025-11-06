@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://m3ryk0cnyv74"]
+[gd_scene load_steps=7 format=3 uid="uid://m3ryk0cnyv74"]
 
 [ext_resource type="Texture2D" uid="uid://q3hrexburyik" path="res://Art/png/main_character.png" id="1_ml4h6"]
 [ext_resource type="Script" uid="uid://culd1qjhmrj21" path="res://nodes/main_character.gd" id="1_v5a35"]
-[ext_resource type="PackedScene" uid="uid://8so72ngk54ct" path="res://nodes/laser.tscn" id="2_jwoin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml4h6"]
 size = Vector2(16, 46)
@@ -34,7 +33,6 @@ _data = {
 
 [node name="main_character" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_v5a35")
-bullet_scene = ExtResource("2_jwoin")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

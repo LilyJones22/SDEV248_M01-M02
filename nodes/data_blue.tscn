@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://chps5hmijp77j"]
+
+[ext_resource type="PackedScene" uid="uid://igeficmsl4x2" path="res://nodes/data_blank.tscn" id="1_3awy8"]
+[ext_resource type="Texture2D" uid="uid://c8ixnakllbsyk" path="res://Art/png/data_blue.png" id="2_6d3p2"]
+[ext_resource type="Script" uid="uid://da8p2ajnk318o" path="res://data_blue.gd" id="2_162oc"]
+
+[node name="data_blue" instance=ExtResource("1_3awy8")]
+data_script = ExtResource("2_162oc")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_6d3p2")

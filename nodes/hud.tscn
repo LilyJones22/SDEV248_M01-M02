@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://fbbc28g1o3q2"]
+
+[ext_resource type="Texture2D" uid="uid://b5hnrv41xsjda" path="res://Art/png/credit.png" id="1_0l8sm"]
+[ext_resource type="Script" uid="uid://g7bsuosh5jfh" path="res://nodes/hud.gd" id="1_17hw4"]
+[ext_resource type="Texture2D" uid="uid://dexeb8cbrk4xf" path="res://Art/png/life.png" id="2_s1cew"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_17hw4")
+
+[node name="Credit" type="Sprite2D" parent="."]
+position = Vector2(62.00006, 92.00001)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_0l8sm")
+
+[node name="Coins" type="Label" parent="Credit"]
+offset_left = 14.0
+offset_top = -11.600005
+offset_right = 59.0
+offset_bottom = 38.399994
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Lives" type="Node" parent="."]
+
+[node name="Life1" type="Sprite2D" parent="Lives"]
+position = Vector2(46, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("2_s1cew")
+
+[node name="Life2" type="Sprite2D" parent="Lives"]
+position = Vector2(83, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("2_s1cew")
+
+[node name="Life3" type="Sprite2D" parent="Lives"]
+position = Vector2(121, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("2_s1cew")
+
+[node name="Life4" type="Sprite2D" parent="Lives"]
+visible = false
+position = Vector2(159, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("2_s1cew")

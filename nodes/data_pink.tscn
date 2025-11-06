@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyfsur47t62hx"]
+
+[ext_resource type="PackedScene" uid="uid://igeficmsl4x2" path="res://nodes/data_blank.tscn" id="1_mdowa"]
+[ext_resource type="Texture2D" uid="uid://cso5f7ptxf1yb" path="res://Art/png/data_pink.png" id="2_kq08m"]
+[ext_resource type="Script" uid="uid://bkcrkqlmm15rf" path="res://data_pink.gd" id="2_n7fp2"]
+
+[node name="data_pink" instance=ExtResource("1_mdowa")]
+data_script = ExtResource("2_n7fp2")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kq08m")
