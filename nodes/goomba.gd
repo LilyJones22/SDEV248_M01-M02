@@ -73,8 +73,6 @@ func _physics_process(delta):
 			turn_around()
 			
 
-
-
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		if body.has_blue:

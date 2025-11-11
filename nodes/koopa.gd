@@ -94,5 +94,5 @@ func _on_area_2d_body_entered(body):
 		health = 0
 
 
-func _on_turn_timer_timeout() -> void:
-	pass # Replace with function body.
+func _on_turn_timer_timeout():
+	is_turning = false
