@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://droms1yhlkwkx"]
+[gd_scene load_steps=5 format=3 uid="uid://droms1yhlkwkx"]
 
+[ext_resource type="Script" uid="uid://cles4cns6dfsg" path="res://nodes/headquarters.gd" id="1_0iei2"]
 [ext_resource type="Texture2D" uid="uid://cc4xnpg1ct2et" path="res://Art/png/headquarters.png" id="1_clcbl"]
+[ext_resource type="PackedScene" uid="uid://crofjrlmnsf7a" path="res://nodes/complete.tscn" id="2_nrghp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0iei2"]
 size = Vector2(320, 150)
 
 [node name="Headquarters" type="Area2D"]
+script = ExtResource("1_0iei2")
+next_scene = ExtResource("2_nrghp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -154.99998)
@@ -15,3 +19,5 @@ texture = ExtResource("1_clcbl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -70)
 shape = SubResource("RectangleShape2D_0iei2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
