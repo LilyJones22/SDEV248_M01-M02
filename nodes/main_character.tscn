@@ -33,6 +33,7 @@ _data = {
 }
 
 [node name="main_character" type="CharacterBody2D" groups=["player"]]
+collision_mask = 30
 script = ExtResource("1_v5a35")
 bullet_scene = ExtResource("2_jwoin")
 metadata/_edit_group_ = true

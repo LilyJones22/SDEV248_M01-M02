@@ -26,6 +26,8 @@ const BLUE_TEXTURE = preload("res://Art/png/main_character_blue.png")
 
 
 
+
+
 func fire_bullet():
 	if not can_fire:
 		return
@@ -102,3 +104,10 @@ func _physics_process(delta):
 			collider.on_player_hit()
 		elif collider.get_parent() and collider.get_parent().is_in_group("blocks"):
 			collider.get_parent().on_player_hit()
+
+
+
+func _on_out_of_bounds_body_entered(body):
+	if body.is_in_group("player"):
+		body.take_damage()
+		body.global_position = $"../Spawn".global_position

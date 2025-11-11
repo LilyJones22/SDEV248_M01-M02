@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://daxnq8ofijc2g"]
+[gd_scene load_steps=5 format=3 uid="uid://daxnq8ofijc2g"]
 
 [ext_resource type="Script" uid="uid://d15prratipw6" path="res://nodes/goomba.gd" id="1_8smrv"]
 [ext_resource type="Texture2D" uid="uid://22txgrg24xco" path="res://Art/png/enemy_1.png" id="1_hy2i1"]
@@ -6,8 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8smrv"]
 size = Vector2(18, 15)
 
-[node name="Goomba" type="Area2D" groups=["enemy"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqejq"]
+size = Vector2(7.333334, 4.0000005)
+
+[node name="Goomba" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(1.5, 1.5)
+collision_layer = 16
+collision_mask = 31
+safe_margin = 0.5
 script = ExtResource("1_8smrv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["enemy"]]
@@ -17,11 +23,28 @@ texture = ExtResource("1_hy2i1")
 shape = SubResource("RectangleShape2D_8smrv")
 
 [node name="WallCheck" type="RayCast2D" parent="."]
-position = Vector2(5.3333335, 0)
-target_position = Vector2(6.6666665, 0)
+position = Vector2(-14, 0)
+target_position = Vector2(-8, 0)
+collision_mask = 31
 
-[node name="GroundCheck" type="RayCast2D" parent="."]
-position = Vector2(4, 4.666667)
-target_position = Vector2(6.666667, 2.6666665)
+[node name="GroundCheck" type="Area2D" parent="."]
+position = Vector2(-8.666667, 9.333333)
+collision_layer = 16
+collision_mask = 31
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCheck"]
+position = Vector2(-4.333337, 1.333333)
+shape = SubResource("RectangleShape2D_eqejq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8smrv")
+
+[node name="TurnTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]
