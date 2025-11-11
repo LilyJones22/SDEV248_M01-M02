@@ -27,7 +27,6 @@ const PINK_TEXTURE = preload("res://Art/png/main_character_pink.png")
 const BLUE_TEXTURE = preload("res://Art/png/main_character_blue.png")
 
 
-	
 
 
 func fire_bullet():
@@ -116,8 +115,10 @@ func _physics_process(delta):
 func _on_out_of_bounds_body_entered(body):
 	if body.is_in_group("player"):
 		body.take_damage()
-		body.global_position = $"../Spawn".global_position
+		body.global_position = $"../Sp  awn".global_position
 		
 func restart():
 	if game_over:
+		lives = 3
+		coins = 0
 		get_tree().change_scene_to_packed(game_over)
