@@ -51,6 +51,8 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["player"]]
+offset = Vector2(0, -90)
+zoom = Vector2(1.75, 1.75)
 
 [node name="Ray" type="RayCast2D" parent="."]
 position = Vector2(0, -25)
